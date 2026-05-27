@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form Pendaftaran Modern</title>
+
+<title>Form Data Jamaah</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,184 +18,273 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
-    min-height:100vh;
-    overflow-x:hidden;
-}
-
-.container{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
     padding:20px;
 }
 
-.card{
-    width:100%;
-    max-width:1200px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:30px;
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    border-radius:25px;
     overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
 }
 
 .header{
-    position:relative;
-    padding:40px 30px;
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
-}
-
-.header::before{
-    content:'';
-    position:absolute;
-    width:250px;
-    height:250px;
-    background:rgba(255,255,255,0.08);
-    border-radius:50%;
-    top:-100px;
-    right:-80px;
+    padding:30px;
 }
 
 .header h1{
-    position:relative;
-    font-size:34px;
-    font-weight:700;
+    font-size:30px;
     margin-bottom:10px;
 }
 
 .header p{
-    position:relative;
-    font-size:15px;
     opacity:0.9;
-    max-width:700px;
-}
-
-.badges{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
-
-.badge{
-    background:rgba(255,255,255,0.15);
-    padding:10px 16px;
-    border-radius:50px;
-    font-size:13px;
-    border:1px solid rgba(255,255,255,0.2);
-}
-
-.form-wrapper{
-    background:white;
-    padding:15px;
-}
-
-iframe{
-    width:100%;
-    height:85vh;
-    border:none;
-    border-radius:20px;
-    background:white;
-}
-
-.footer{
-    padding:20px;
-    text-align:center;
-    color:#64748b;
     font-size:14px;
-    background:#f8fafc;
 }
 
-.glow{
-    position:fixed;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:#3b82f6;
-    filter:blur(120px);
-    opacity:0.15;
-    z-index:-1;
+.form-area{
+    padding:30px;
 }
 
-.glow.one{
-    top:-50px;
-    left:-50px;
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-.glow.two{
-    bottom:-100px;
-    right:-50px;
-    background:#8b5cf6;
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1 / -1;
+}
+
+label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#334155;
+}
+
+input,
+select,
+textarea{
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #cbd5e1;
+    font-size:14px;
+    font-family:'Poppins',sans-serif;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.1);
+}
+
+textarea{
+    resize:none;
+    min-height:100px;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:25px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(37,99,235,0.3);
+}
+
+#status{
+    margin-top:20px;
+    text-align:center;
+    font-weight:600;
 }
 
 @media(max-width:768px){
 
-    .header{
-        padding:30px 20px;
+    .grid{
+        grid-template-columns:1fr;
     }
 
     .header h1{
-        font-size:26px;
-    }
-
-    .header p{
-        font-size:14px;
-    }
-
-    iframe{
-        height:80vh;
-    }
-
-    .card{
-        border-radius:20px;
+        font-size:24px;
     }
 
 }
+
 </style>
 </head>
-<body>
 
-<div class="glow one"></div>
-<div class="glow two"></div>
+<body>
 
 <div class="container">
 
-    <div class="card">
+    <div class="header">
+        <h1>Form Data Jamaah</h1>
+        <p>Silakan isi data dengan lengkap dan benar</p>
+    </div>
 
-        <div class="header">
-            <h1>Form Pendaftaran Online</h1>
-            <p>
-                Silakan isi data dengan lengkap dan benar.
-                Tampilan form dibuat lebih modern, elegan, dan nyaman digunakan di HP maupun desktop.
-            </p>
+    <div class="form-area">
 
-            <div class="badges">
-                <div class="badge">✨ Modern UI</div>
-                <div class="badge">📱 Mobile Friendly</div>
-                <div class="badge">⚡ Fast Loading</div>
-                <div class="badge">🔒 Aman & Terintegrasi</div>
+        <form id="jamaahForm">
+
+            <div class="grid">
+
+                <div class="form-group">
+                    <label>Upload Foto</label>
+                    <input type="file" id="foto">
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Status SISKOPATUH</label>
+                    <select id="statusSiskopatuh">
+                        <option>Aktif</option>
+                        <option>Belum Aktif</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>ID Jamaah</label>
+                    <input type="text" id="idJamaah">
+                </div>
+
+                <div class="form-group">
+                    <label>No Paspor</label>
+                    <input type="text" id="paspor">
+                </div>
+
+                <div class="form-group">
+                    <label>Masa Berlaku Paspor</label>
+                    <input type="date" id="masaPaspor">
+                </div>
+
+                <div class="form-group">
+                    <label>Status Paspor</label>
+                    <select id="statusPaspor">
+                        <option>Aktif</option>
+                        <option>Kadaluarsa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>NIK</label>
+                    <input type="text" id="nik">
+                </div>
+
+                <div class="form-group full">
+                    <label>Riwayat Penyakit</label>
+                    <textarea id="penyakit"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>No WhatsApp</label>
+                    <input type="text" id="wa">
+                </div>
+
+                <div class="form-group">
+                    <label>Kontak Darurat</label>
+                    <input type="text" id="kontakDarurat">
+                </div>
+
+                <div class="form-group">
+                    <label>Hubungan</label>
+                    <input type="text" id="hubungan">
+                </div>
+
+                <div class="form-group">
+                    <label>No Darurat</label>
+                    <input type="text" id="noDarurat">
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Paspor</label>
+                    <input type="file" id="uploadPaspor">
+                </div>
+
+                <div class="form-group">
+                    <label>Upload KTP</label>
+                    <input type="file" id="uploadKtp">
+                </div>
+
             </div>
-        </div>
 
-        <div class="form-wrapper">
-            <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScPhn9E0FscmYAGKd-3kv8nDSOzCevHh-jBIK_foIuZyIjBLw/viewform?embedded=true">
-            </iframe>
-        </div>
+            <button type="submit">Simpan Data</button>
 
-        <div class="footer">
-            © 2026 Form Digital Modern • Dibuat Dengan Tampilan Premium
-        </div>
+            <div id="status"></div>
+
+        </form>
 
     </div>
 
 </div>
 
+<script>
+
+document.getElementById("jamaahForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const data = {
+        nama: document.getElementById("nama").value,
+        statusSiskopatuh: document.getElementById("statusSiskopatuh").value,
+        idJamaah: document.getElementById("idJamaah").value,
+        paspor: document.getElementById("paspor").value,
+        masaPaspor: document.getElementById("masaPaspor").value,
+        statusPaspor: document.getElementById("statusPaspor").value,
+        nik: document.getElementById("nik").value,
+        penyakit: document.getElementById("penyakit").value,
+        wa: document.getElementById("wa").value,
+        kontakDarurat: document.getElementById("kontakDarurat").value,
+        hubungan: document.getElementById("hubungan").value,
+        noDarurat: document.getElementById("noDarurat").value
+    };
+
+    /*
+    GANTI URL INI DENGAN WEB APP GOOGLE APPS SCRIPT
+    */
+
+    fetch("PASTE_WEB_APP_URL_DISINI",{
+        method:"POST",
+        body:JSON.stringify(data)
+    })
+    .then(res => res.text())
+    .then(res => {
+        document.getElementById("status").innerHTML = "✅ Data berhasil disimpan";
+        document.getElementById("jamaahForm").reset();
+    })
+    .catch(err => {
+        document.getElementById("status").innerHTML = "❌ Gagal menyimpan data";
+    });
+
+});
+
+</script>
+
 </body>
 </html>
-```
