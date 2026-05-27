@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <title>Input Data Jamaah</title>
 
@@ -14,46 +14,47 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
 body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#0f172a,#1e293b);
-    padding:20px;
+    min-height:100vh;
+    padding:12px;
 }
 
 .container{
+    width:100%;
     max-width:1000px;
     margin:auto;
-    background:white;
-    border-radius:25px;
+    background:#ffffff;
+    border-radius:22px;
     overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+    box-shadow:0 10px 35px rgba(0,0,0,0.25);
 }
 
 .header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
-    padding:35px;
+    padding:24px 20px;
+    text-align:center;
 }
 
 .header h1{
-    font-size:20px;
-    margin-bottom:5px;
-}
-
-.header p{
-    opacity:0.9;
+    font-size:22px;
+    font-weight:700;
+    line-height:1.4;
 }
 
 .form-area{
-    padding:30px;
+    padding:20px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:18px;
 }
 
 .form-group{
@@ -67,6 +68,7 @@ body{
 
 label{
     margin-bottom:8px;
+    font-size:13px;
     font-weight:600;
     color:#334155;
 }
@@ -74,31 +76,41 @@ label{
 input,
 select,
 textarea{
-    padding:14px;
+    width:100%;
+    padding:14px 15px;
     border-radius:14px;
     border:1px solid #cbd5e1;
-    font-size:12px;
+    font-size:14px;
     outline:none;
     transition:0.3s;
     font-family:'Poppins',sans-serif;
+    background:#f8fafc;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
     border-color:#2563eb;
-    box-shadow:0 0 0 4px rgba(37,99,235,0.1);
+    background:white;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.10);
 }
 
 textarea{
     resize:none;
-    min-height:80px;
+    min-height:90px;
+}
+
+input[type="file"]{
+    padding:12px;
+    background:#f1f5f9;
+    cursor:pointer;
 }
 
 .file-info{
-    font-size:9px;
+    font-size:11px;
     color:#64748b;
     margin-top:6px;
+    word-break:break-word;
 }
 
 button{
@@ -108,7 +120,7 @@ button{
     border-radius:16px;
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
-    font-size:12px;
+    font-size:15px;
     font-weight:600;
     cursor:pointer;
     margin-top:25px;
@@ -119,20 +131,91 @@ button:hover{
     transform:translateY(-2px);
 }
 
+button:active{
+    transform:scale(0.98);
+}
+
+button:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+}
+
 #status{
-    margin-top:20px;
+    margin-top:18px;
     text-align:center;
+    font-size:14px;
     font-weight:600;
 }
 
 @media(max-width:768px){
 
-    .grid{
-        grid-template-columns:1fr;
+    body{
+        padding:10px;
+    }
+
+    .container{
+        border-radius:18px;
+    }
+
+    .header{
+        padding:22px 16px;
     }
 
     .header h1{
-        font-size:20px;
+        font-size:19px;
+    }
+
+    .form-area{
+        padding:16px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    label{
+        font-size:12px;
+    }
+
+    input,
+    select,
+    textarea{
+        font-size:14px;
+        padding:13px;
+        border-radius:12px;
+    }
+
+    button{
+        padding:15px;
+        font-size:14px;
+        border-radius:14px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+        padding:8px;
+    }
+
+    .header h1{
+        font-size:17px;
+    }
+
+    .form-area{
+        padding:14px;
+    }
+
+    input,
+    select,
+    textarea{
+        font-size:13px;
+    }
+
+    .file-info{
+        font-size:10px;
     }
 
 }
@@ -162,7 +245,7 @@ button:hover{
 
 <div class="form-group">
 <label>Nama Lengkap</label>
-<input type="text" id="nama" required>
+<input type="text" id="nama" required placeholder="Masukkan nama lengkap">
 </div>
 
 <div class="form-group">
@@ -175,12 +258,12 @@ button:hover{
 
 <div class="form-group">
 <label>ID Jamaah</label>
-<input type="text" id="idJamaah">
+<input type="text" id="idJamaah" placeholder="Masukkan ID Jamaah">
 </div>
 
 <div class="form-group">
 <label>No Paspor</label>
-<input type="text" id="paspor">
+<input type="text" id="paspor" placeholder="Masukkan nomor paspor">
 </div>
 
 <div class="form-group">
@@ -198,32 +281,32 @@ button:hover{
 
 <div class="form-group">
 <label>NIK</label>
-<input type="text" id="nik">
+<input type="text" id="nik" placeholder="Masukkan NIK">
 </div>
 
 <div class="form-group full">
 <label>Riwayat Penyakit</label>
-<textarea id="penyakit"></textarea>
+<textarea id="penyakit" placeholder="Masukkan riwayat penyakit"></textarea>
 </div>
 
 <div class="form-group">
 <label>No WhatsApp</label>
-<input type="text" id="wa">
+<input type="text" id="wa" placeholder="08xxxxxxxxxx">
 </div>
 
 <div class="form-group">
 <label>Kontak Darurat</label>
-<input type="text" id="kontakDarurat">
+<input type="text" id="kontakDarurat" placeholder="Nama kontak darurat">
 </div>
 
 <div class="form-group">
 <label>Hubungan</label>
-<input type="text" id="hubungan">
+<input type="text" id="hubungan" placeholder="Contoh: Anak / Istri">
 </div>
 
 <div class="form-group">
 <label>No Darurat</label>
-<input type="text" id="noDarurat">
+<input type="text" id="noDarurat" placeholder="08xxxxxxxxxx">
 </div>
 
 <div class="form-group">
@@ -285,7 +368,7 @@ function showFileName(inputId,infoId){
 
             document
             .getElementById(infoId)
-            .innerHTML = file.name;
+            .innerHTML = "📄 " + file.name;
 
         }
 
@@ -436,6 +519,10 @@ status.style.color = "green";
 document
 .getElementById("jamaahForm")
 .reset();
+
+document.getElementById("fotoInfo").innerHTML = "";
+document.getElementById("pasporInfo").innerHTML = "";
+document.getElementById("ktpInfo").innerHTML = "";
 
 }else{
 
