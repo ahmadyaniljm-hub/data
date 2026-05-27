@@ -23,7 +23,7 @@ body{
 }
 
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:auto;
     background:white;
     border-radius:25px;
@@ -34,17 +34,16 @@ body{
 .header{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
-    padding:30px;
+    padding:35px;
 }
 
 .header h1{
-    font-size:30px;
+    font-size:32px;
     margin-bottom:10px;
 }
 
 .header p{
     opacity:0.9;
-    font-size:14px;
 }
 
 .form-area{
@@ -63,7 +62,7 @@ body{
 }
 
 .form-group.full{
-    grid-column:1 / -1;
+    grid-column:1/-1;
 }
 
 label{
@@ -79,9 +78,9 @@ textarea{
     border-radius:14px;
     border:1px solid #cbd5e1;
     font-size:14px;
-    font-family:'Poppins',sans-serif;
     outline:none;
     transition:0.3s;
+    font-family:'Poppins',sans-serif;
 }
 
 input:focus,
@@ -94,6 +93,12 @@ textarea:focus{
 textarea{
     resize:none;
     min-height:100px;
+}
+
+.file-info{
+    font-size:12px;
+    color:#64748b;
+    margin-top:6px;
 }
 
 button{
@@ -112,7 +117,6 @@ button{
 
 button:hover{
     transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(37,99,235,0.3);
 }
 
 #status{
@@ -140,107 +144,112 @@ button:hover{
 
 <div class="container">
 
-    <div class="header">
-        <h1>Form Data Jamaah</h1>
-        <p>Silakan isi data dengan lengkap dan benar</p>
-    </div>
+<div class="header">
+<h1>Form Data Jamaah</h1>
+<p>Silakan isi data dengan lengkap dan benar</p>
+</div>
 
-    <div class="form-area">
+<div class="form-area">
 
-        <form id="jamaahForm">
+<form id="jamaahForm">
 
-            <div class="grid">
+<div class="grid">
 
-                <div class="form-group">
-                    <label>Upload Foto</label>
-                    <input type="file" id="foto">
-                </div>
+<div class="form-group">
+<label>Upload Foto</label>
+<input type="file" id="foto" accept="image/*">
+<div class="file-info" id="fotoInfo"></div>
+</div>
 
-                <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" id="nama" required>
-                </div>
+<div class="form-group">
+<label>Nama Lengkap</label>
+<input type="text" id="nama" required>
+</div>
 
-                <div class="form-group">
-                    <label>Status SISKOPATUH</label>
-                    <select id="statusSiskopatuh">
-                        <option>Aktif</option>
-                        <option>Belum Aktif</option>
-                    </select>
-                </div>
+<div class="form-group">
+<label>Status SISKOPATUH</label>
+<select id="statusSiskopatuh">
+<option>Aktif</option>
+<option>Belum Aktif</option>
+</select>
+</div>
 
-                <div class="form-group">
-                    <label>ID Jamaah</label>
-                    <input type="text" id="idJamaah">
-                </div>
+<div class="form-group">
+<label>ID Jamaah</label>
+<input type="text" id="idJamaah">
+</div>
 
-                <div class="form-group">
-                    <label>No Paspor</label>
-                    <input type="text" id="paspor">
-                </div>
+<div class="form-group">
+<label>No Paspor</label>
+<input type="text" id="paspor">
+</div>
 
-                <div class="form-group">
-                    <label>Masa Berlaku Paspor</label>
-                    <input type="date" id="masaPaspor">
-                </div>
+<div class="form-group">
+<label>Masa Berlaku Paspor</label>
+<input type="date" id="masaPaspor">
+</div>
 
-                <div class="form-group">
-                    <label>Status Paspor</label>
-                    <select id="statusPaspor">
-                        <option>Aktif</option>
-                        <option>Kadaluarsa</option>
-                    </select>
-                </div>
+<div class="form-group">
+<label>Status Paspor</label>
+<select id="statusPaspor">
+<option>Aktif</option>
+<option>Kadaluarsa</option>
+</select>
+</div>
 
-                <div class="form-group">
-                    <label>NIK</label>
-                    <input type="text" id="nik">
-                </div>
+<div class="form-group">
+<label>NIK</label>
+<input type="text" id="nik">
+</div>
 
-                <div class="form-group full">
-                    <label>Riwayat Penyakit</label>
-                    <textarea id="penyakit"></textarea>
-                </div>
+<div class="form-group full">
+<label>Riwayat Penyakit</label>
+<textarea id="penyakit"></textarea>
+</div>
 
-                <div class="form-group">
-                    <label>No WhatsApp</label>
-                    <input type="text" id="wa">
-                </div>
+<div class="form-group">
+<label>No WhatsApp</label>
+<input type="text" id="wa">
+</div>
 
-                <div class="form-group">
-                    <label>Kontak Darurat</label>
-                    <input type="text" id="kontakDarurat">
-                </div>
+<div class="form-group">
+<label>Kontak Darurat</label>
+<input type="text" id="kontakDarurat">
+</div>
 
-                <div class="form-group">
-                    <label>Hubungan</label>
-                    <input type="text" id="hubungan">
-                </div>
+<div class="form-group">
+<label>Hubungan</label>
+<input type="text" id="hubungan">
+</div>
 
-                <div class="form-group">
-                    <label>No Darurat</label>
-                    <input type="text" id="noDarurat">
-                </div>
+<div class="form-group">
+<label>No Darurat</label>
+<input type="text" id="noDarurat">
+</div>
 
-                <div class="form-group">
-                    <label>Upload Paspor</label>
-                    <input type="file" id="uploadPaspor">
-                </div>
+<div class="form-group">
+<label>Upload Paspor</label>
+<input type="file" id="uploadPaspor" accept="image/*,.pdf">
+<div class="file-info" id="pasporInfo"></div>
+</div>
 
-                <div class="form-group">
-                    <label>Upload KTP</label>
-                    <input type="file" id="uploadKtp">
-                </div>
+<div class="form-group">
+<label>Upload KTP</label>
+<input type="file" id="uploadKtp" accept="image/*,.pdf">
+<div class="file-info" id="ktpInfo"></div>
+</div>
 
-            </div>
+</div>
 
-            <button type="submit">Simpan Data</button>
+<button type="submit" id="submitBtn">
+Simpan Data
+</button>
 
-            <div id="status"></div>
+<div id="status"></div>
 
-        </form>
+</form>
 
-    </div>
+</div>
 
 </div>
 
@@ -265,126 +274,191 @@ function convertToBase64(file){
 
 }
 
+function showFileName(inputId,infoId){
+
+    document
+    .getElementById(inputId)
+    .addEventListener("change",function(){
+
+        const file = this.files[0];
+
+        if(file){
+
+            document
+            .getElementById(infoId)
+            .innerHTML = file.name;
+
+        }
+
+    });
+
+}
+
+showFileName("foto","fotoInfo");
+showFileName("uploadPaspor","pasporInfo");
+showFileName("uploadKtp","ktpInfo");
+
 document
 .getElementById("jamaahForm")
 .addEventListener("submit", async function(e){
 
-    e.preventDefault();
+e.preventDefault();
 
-    const button = document.querySelector("button");
+const button =
+document.getElementById("submitBtn");
 
-    const status = document.getElementById("status");
+const status =
+document.getElementById("status");
 
-    button.disabled = true;
+button.disabled = true;
 
-    button.innerHTML = "Mengupload...";
+button.innerHTML = "Mengupload...";
 
-    status.innerHTML = "";
+status.innerHTML = "";
 
-    try{
+try{
 
-        // FILE FOTO
-        const fotoFile =
-        document.getElementById("foto").files[0];
+const fotoFile =
+document.getElementById("foto").files[0];
 
-        let fotoBase64 = "";
+const pasporFile =
+document.getElementById("uploadPaspor").files[0];
 
-        let fotoName = "";
+const ktpFile =
+document.getElementById("uploadKtp").files[0];
 
-        if(fotoFile){
+let fotoBase64 = "";
+let pasporBase64 = "";
+let ktpBase64 = "";
 
-            fotoBase64 =
-            await convertToBase64(fotoFile);
+let fotoName = "";
+let pasporName = "";
+let ktpName = "";
 
-            fotoName =
-            fotoFile.name;
+if(fotoFile){
 
-        }
+fotoBase64 =
+await convertToBase64(fotoFile);
 
-        const data = {
+fotoName = fotoFile.name;
 
-            nama:
-            document.getElementById("nama").value,
+}
 
-            statusSiskopatuh:
-            document.getElementById("statusSiskopatuh").value,
+if(pasporFile){
 
-            idJamaah:
-            document.getElementById("idJamaah").value,
+pasporBase64 =
+await convertToBase64(pasporFile);
 
-            paspor:
-            document.getElementById("paspor").value,
+pasporName = pasporFile.name;
 
-            masaPaspor:
-            document.getElementById("masaPaspor").value,
+}
 
-            statusPaspor:
-            document.getElementById("statusPaspor").value,
+if(ktpFile){
 
-            nik:
-            document.getElementById("nik").value,
+ktpBase64 =
+await convertToBase64(ktpFile);
 
-            penyakit:
-            document.getElementById("penyakit").value,
+ktpName = ktpFile.name;
 
-            wa:
-            document.getElementById("wa").value,
+}
 
-            kontakDarurat:
-            document.getElementById("kontakDarurat").value,
+const data = {
 
-            hubungan:
-            document.getElementById("hubungan").value,
+nama:
+document.getElementById("nama").value,
 
-            noDarurat:
-            document.getElementById("noDarurat").value,
+statusSiskopatuh:
+document.getElementById("statusSiskopatuh").value,
 
-            fotoBase64:fotoBase64,
+idJamaah:
+document.getElementById("idJamaah").value,
 
-            fotoName:fotoName
+paspor:
+document.getElementById("paspor").value,
 
-        };
+masaPaspor:
+document.getElementById("masaPaspor").value,
 
-        const response = await fetch(scriptURL,{
+statusPaspor:
+document.getElementById("statusPaspor").value,
 
-            method:"POST",
+nik:
+document.getElementById("nik").value,
 
-            body:JSON.stringify(data)
+penyakit:
+document.getElementById("penyakit").value,
 
-        });
+wa:
+document.getElementById("wa").value,
 
-        const result = await response.json();
+kontakDarurat:
+document.getElementById("kontakDarurat").value,
 
-        if(result.status === "success"){
+hubungan:
+document.getElementById("hubungan").value,
 
-            status.innerHTML =
-            "✅ Data berhasil disimpan";
+noDarurat:
+document.getElementById("noDarurat").value,
 
-            status.style.color = "green";
+fotoBase64:fotoBase64,
+fotoName:fotoName,
 
-            document.getElementById("jamaahForm").reset();
+pasporBase64:pasporBase64,
+pasporName:pasporName,
 
-        }else{
+ktpBase64:ktpBase64,
+ktpName:ktpName
 
-            status.innerHTML =
-            "❌ " + result.message;
+};
 
-            status.style.color = "red";
+const response =
+await fetch(scriptURL,{
 
-        }
+method:"POST",
 
-    }catch(error){
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
 
-        status.innerHTML =
-        "❌ Upload gagal";
+body:JSON.stringify(data)
 
-        status.style.color = "red";
+});
 
-    }
+const result =
+await response.json();
 
-    button.disabled = false;
+if(result.status === "success"){
 
-    button.innerHTML = "Simpan Data";
+status.innerHTML =
+"✅ Data berhasil disimpan";
+
+status.style.color = "green";
+
+document
+.getElementById("jamaahForm")
+.reset();
+
+}else{
+
+status.innerHTML =
+"❌ " + result.message;
+
+status.style.color = "red";
+
+}
+
+}catch(error){
+
+status.innerHTML =
+"❌ Upload gagal";
+
+status.style.color = "red";
+
+}
+
+button.disabled = false;
+
+button.innerHTML = "Simpan Data";
 
 });
 
