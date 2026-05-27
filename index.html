@@ -1,55 +1,199 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Pendaftaran</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Pendaftaran Modern</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body{
-      background:#f5f5f5;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:1200px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+.header{
+    position:relative;
+    padding:40px 30px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+}
+
+.header::before{
+    content:'';
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+    top:-100px;
+    right:-80px;
+}
+
+.header h1{
+    position:relative;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.header p{
+    position:relative;
+    font-size:15px;
+    opacity:0.9;
+    max-width:700px;
+}
+
+.badges{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.badge{
+    background:rgba(255,255,255,0.15);
+    padding:10px 16px;
+    border-radius:50px;
+    font-size:13px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.form-wrapper{
+    background:white;
+    padding:15px;
+}
+
+iframe{
+    width:100%;
+    height:85vh;
+    border:none;
+    border-radius:20px;
+    background:white;
+}
+
+.footer{
+    padding:20px;
+    text-align:center;
+    color:#64748b;
+    font-size:14px;
+    background:#f8fafc;
+}
+
+.glow{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:#3b82f6;
+    filter:blur(120px);
+    opacity:0.15;
+    z-index:-1;
+}
+
+.glow.one{
+    top:-50px;
+    left:-50px;
+}
+
+.glow.two{
+    bottom:-100px;
+    right:-50px;
+    background:#8b5cf6;
+}
+
+@media(max-width:768px){
 
     .header{
-      background:#0d6efd;
-      color:white;
-      text-align:center;
-      padding:15px;
-      font-size:22px;
-      font-weight:bold;
+        padding:30px 20px;
     }
 
-    .form-container{
-      width:100%;
-      height:calc(100vh - 60px);
+    .header h1{
+        font-size:26px;
+    }
+
+    .header p{
+        font-size:14px;
     }
 
     iframe{
-      width:100%;
-      height:100%;
-      border:none;
+        height:80vh;
     }
-  </style>
+
+    .card{
+        border-radius:20px;
+    }
+
+}
+</style>
 </head>
 <body>
 
-  <div class="header">
-    Form Pendaftaran
-  </div>
+<div class="glow one"></div>
+<div class="glow two"></div>
 
-  <div class="form-container">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLScPhn9E0FscmYAGKd-3kv8nDSOzCevHh-jBIK_foIuZyIjBLw/viewform?embedded=true">
-      Memuat…
-    </iframe>
-  </div>
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+            <h1>Form Pendaftaran Online</h1>
+            <p>
+                Silakan isi data dengan lengkap dan benar.
+                Tampilan form dibuat lebih modern, elegan, dan nyaman digunakan di HP maupun desktop.
+            </p>
+
+            <div class="badges">
+                <div class="badge">✨ Modern UI</div>
+                <div class="badge">📱 Mobile Friendly</div>
+                <div class="badge">⚡ Fast Loading</div>
+                <div class="badge">🔒 Aman & Terintegrasi</div>
+            </div>
+        </div>
+
+        <div class="form-wrapper">
+            <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScPhn9E0FscmYAGKd-3kv8nDSOzCevHh-jBIK_foIuZyIjBLw/viewform?embedded=true">
+            </iframe>
+        </div>
+
+        <div class="footer">
+            © 2026 Form Digital Modern • Dibuat Dengan Tampilan Premium
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
+```
