@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Form</title>
+  <title>Form Pendaftaran</title>
 
   <style>
-    body{
+    *{
       margin:0;
       padding:0;
-      background:#f5f5f5;
-      font-family:Arial,sans-serif;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
 
-    .wrapper{
+    body{
+      background:#f5f5f5;
+    }
+
+    .header{
+      background:#0d6efd;
+      color:white;
+      text-align:center;
+      padding:15px;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .form-container{
       width:100%;
-      height:100vh;
+      height:calc(100vh - 60px);
     }
 
     iframe{
@@ -27,12 +40,16 @@
 </head>
 <body>
 
-<div class="wrapper">
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSeXXXXXXXXXXXXXXXXXXXX/viewform?embedded=true">
-    Memuat…
-  </iframe>
-</div>
+  <div class="header">
+    Form Pendaftaran
+  </div>
+
+  <div class="form-container">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLScPhn9E0FscmYAGKd-3kv8nDSOzCevHh-jBIK_foIuZyIjBLw/viewform?embedded=true">
+      Memuat…
+    </iframe>
+  </div>
 
 </body>
 </html>
