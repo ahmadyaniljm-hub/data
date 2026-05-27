@@ -247,7 +247,23 @@ button:hover{
 <script>
 
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbx9F17xURUHX_tl_97Jki8HMdvNL_DdiWrMxc4TbpuVSSLUi0VwC5exL9pmMJWVzPWk/exec";
+"https://script.google.com/macros/s/AKfycbz0XyI1GULWyY816ESYRTciyiKd87kGtiEpa5o861sJw1NjGN1X_RG2FpUspvuEoRUf/exec";
+
+function convertToBase64(file){
+
+    return new Promise((resolve,reject)=>{
+
+        const reader = new FileReader();
+
+        reader.readAsDataURL(file);
+
+        reader.onload = () => resolve(reader.result);
+
+        reader.onerror = error => reject(error);
+
+    });
+
+}
 
 document
 .getElementById("jamaahForm")
@@ -256,64 +272,82 @@ document
     e.preventDefault();
 
     const button = document.querySelector("button");
+
     const status = document.getElementById("status");
 
     button.disabled = true;
-    button.innerHTML = "Menyimpan...";
+
+    button.innerHTML = "Mengupload...";
 
     status.innerHTML = "";
 
-    const data = {
-
-        nama:
-        document.getElementById("nama").value,
-
-        statusSiskopatuh:
-        document.getElementById("statusSiskopatuh").value,
-
-        idJamaah:
-        document.getElementById("idJamaah").value,
-
-        paspor:
-        document.getElementById("paspor").value,
-
-        masaPaspor:
-        document.getElementById("masaPaspor").value,
-
-        statusPaspor:
-        document.getElementById("statusPaspor").value,
-
-        nik:
-        document.getElementById("nik").value,
-
-        penyakit:
-        document.getElementById("penyakit").value,
-
-        wa:
-        document.getElementById("wa").value,
-
-        kontakDarurat:
-        document.getElementById("kontakDarurat").value,
-
-        hubungan:
-        document.getElementById("hubungan").value,
-
-        noDarurat:
-        document.getElementById("noDarurat").value
-
-    };
-
     try{
+
+        // FILE FOTO
+        const fotoFile =
+        document.getElementById("foto").files[0];
+
+        let fotoBase64 = "";
+
+        let fotoName = "";
+
+        if(fotoFile){
+
+            fotoBase64 =
+            await convertToBase64(fotoFile);
+
+            fotoName =
+            fotoFile.name;
+
+        }
+
+        const data = {
+
+            nama:
+            document.getElementById("nama").value,
+
+            statusSiskopatuh:
+            document.getElementById("statusSiskopatuh").value,
+
+            idJamaah:
+            document.getElementById("idJamaah").value,
+
+            paspor:
+            document.getElementById("paspor").value,
+
+            masaPaspor:
+            document.getElementById("masaPaspor").value,
+
+            statusPaspor:
+            document.getElementById("statusPaspor").value,
+
+            nik:
+            document.getElementById("nik").value,
+
+            penyakit:
+            document.getElementById("penyakit").value,
+
+            wa:
+            document.getElementById("wa").value,
+
+            kontakDarurat:
+            document.getElementById("kontakDarurat").value,
+
+            hubungan:
+            document.getElementById("hubungan").value,
+
+            noDarurat:
+            document.getElementById("noDarurat").value,
+
+            fotoBase64:fotoBase64,
+
+            fotoName:fotoName
+
+        };
 
         const response = await fetch(scriptURL,{
 
             method:"POST",
-
-            mode:"cors",
-
-            headers:{
-                "Content-Type":"application/json"
-            },
 
             body:JSON.stringify(data)
 
@@ -342,13 +376,14 @@ document
     }catch(error){
 
         status.innerHTML =
-        "❌ Gagal terhubung ke server";
+        "❌ Upload gagal";
 
         status.style.color = "red";
 
     }
 
     button.disabled = false;
+
     button.innerHTML = "Simpan Data";
 
 });
